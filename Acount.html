@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+
+    <script src="https://kit.fontawesome.com/3d9a7c05b8.js" crossorigin="anonymous"></script>
+    <title>SportEssentials Hub | Acount Page</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io\apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io\favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" width="135px" alt="Logo"></a>
+            </div>
+            <nav class="navi-bar" id="nav-menu">
+
+                <ul>
+                    <span class="menu-close" id="close-btn">&times;</span>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products-page.html">Products</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="Acount.html">Account</a></li>
+                </ul>
+
+            </nav>
+
+            <div class="cart-m">
+                <a href="cart.html"><img class="cart" src="images/cart.png" width="30px" height="30px"></a>
+
+                <span class="menu-toggle" id="menu-btn"><img
+                        src="https://cdn-icons-png.flaticon.com/128/2976/2976215.png" alt=""></span>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- --------------acount-page------->
+
+    <div class="acount-page">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-2">
+                    <img src="images/image1.png" width="100%">
+                </div>
+
+
+                <div class="col-2">
+
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Register</span>
+                            <hr id="indicator">
+                        </div>
+
+                        <form id="loginform">
+                            <input type="text" placeholder="Username">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="btn">Log In</button>
+                            <a href="#">Forgot Passward</a>
+                        </form>
+
+
+                        <form id="regform">
+                            <input type="text" placeholder="Username">
+                            <input type="email" placeholder="Email">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="btn">Register</button>
+                        </form>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ----------------Footer-------- -->
+
+    <div class="footer">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App FOr Andriod And ios Mobile Phone.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png" alt="">
+                        <img src="images/App-store.png" alt="">
+
+                    </div>
+                </div>
+
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png" alt="">
+                    <p>Our Purpose Is To Sustainably Make THE pleasure And
+                        Benifits Of Sports Accecible To The Many.</p>
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>Usefull Links</h3>
+                    <ul>
+                        <li>Coupens</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+            <p class="copyright">Copyright 2023-Fakhar Ud Deen</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ---------JS For toggle menu--- -->
+    <script>
+
+        const navMenu = document.getElementById("nav-menu"),
+            toggleMenu = document.getElementById("menu-btn"),
+            closeMenu = document.getElementById("close-btn")
+
+        toggleMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('show')
+        })
+        closeMenu.addEventListener('click', () => {
+            navMenu.classList.remove('show')
+        })
+
+    </script>
+
+<!-- -------------js For toggle forms-------- -->
+
+<script>
+
+let LoginForm = document.getElementById("loginform");
+let RegForm = document.getElementById("regform");
+let Indicator = document.getElementById("indicator");
+
+
+function register(){
+    RegForm.style.transform = "translateX(0px)"
+    LoginForm.style.transform = "translateX(0px)"
+    Indicator.style.transform = "translateX(100px)"
+
+}
+
+function login(){
+    RegForm.style.transform = "translateX(300px)"
+    LoginForm.style.transform = "translateX(300px)"
+    Indicator.style.transform = "translateX(0px)"
+
+}
+
+
+
+</script>
+
+</body>
+
+</html>
