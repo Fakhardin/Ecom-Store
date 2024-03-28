@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- HTML code for product selection button and cart -->
+<button id="add-to-cart-btn">Add to Cart</button>
+<div id="cart"></div>
+
+    
+    <script>
+        // JavaScript code for the cart
+let products = []; // array to store products
+
+const addToCartButton = document.getElementById('add-to-cart-btn'); // get the product selection button
+const cart = document.getElementById('cart'); // get the cart
+
+addToCartButton.addEventListener('click', () => {
+  const product = {
+    name: 'Product Name',
+    price: 10.99,
+    quantity: 1
+  }; // create the product object with details like name, price and quantity
+
+  products.push(product); // add the product to the array
+
+  // update the cart
+  let cartHTML = '';
+  let totalPrice = 0;
+  for (let i = 0; i < products.length; i++) {
+    const prod = products[i];
+    totalPrice += prod.price * prod.quantity;
+    cartHTML += `<div>${prod.name} - ${prod.price} - ${prod.quantity}</div>`;
+  }
+  cartHTML += `<div>Total Price: ${totalPrice}</div>`;
+  cart.innerHTML = cartHTML;
+});
+
+// add a checkout button to the cart
+const checkoutButton = document.createElement('button');
+checkoutButton.innerText = 'Checkout';
+cart.appendChild(checkoutButton);
+
+// add a click event listener to the checkout button
+checkoutButton.addEventListener('click', () => {
+  // perform the checkout process here, e.g. send data to the server, clear the cart, etc.
+  console.log('Checkout clicked!');
+  console.log(products); // output the products array to the console for testing purposes
+  products = []; // clear the cart after checkout
+  cart.innerHTML = ''; // clear the cart HTML
+});
+
+    </script>
+</body>
+</html>
